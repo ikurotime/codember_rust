@@ -5,7 +5,7 @@ Cada semana se publica un nuevo ejercicio y se puede resolver en cualquier lengu
 
 ## Ejercicios
 
-[Semana 1](https://github.com/ikurotime/codember_rust/Week%201/)
+[Semana 1](https://github.com/ikurotime/codember_rust/tree/main/Week%201)
 
 ## Ejecutar los ejercicios
 
