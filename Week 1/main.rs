@@ -11,7 +11,6 @@ fn main() {
         if line.trim().is_empty() {
           users.push("|".to_string());
         } else {
-          //si la linea no contiene @midudev pushea al array
           users.push(line.to_string());
         }
     });
