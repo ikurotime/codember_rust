@@ -1,5 +1,7 @@
 use std::fs;
 
+const ASCII_MIN_VALUE: u8 = 32;
+const ASCII_MAX_VALUE: u8 = 126;
 
 fn main (){
   println!("In file encrypted.txt");
@@ -13,7 +15,7 @@ fn main (){
     }else{
       current_ascii.push_str(&letter.to_string()); // we store the numbers in a string
       if letter.is_numeric(){
-        if current_ascii.parse::<i32>().unwrap() >= 97 && current_ascii.parse::<i32>().unwrap() <= 122{ 
+        if current_ascii.parse::<i32>().unwrap() >= ASCII_MIN_VALUE && current_ascii.parse::<i32>().unwrap() <= ASCII_MAX_VALUE{ 
           /*if the current ascii value is between 97 and 122 (an ascii letter)
           we push the letter to the array */
           decrypted.push(current_ascii.parse::<u8>().unwrap() as char); //we convert the ascii value to a char and push to array
