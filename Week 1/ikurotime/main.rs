@@ -7,17 +7,13 @@ struct User {
 fn main() {
     println!("In file {}", "users.txt");
     let contents = fs::read_to_string("users.txt").expect("Should have been able to read the file");
-    let binding = contents
+    let users = contents
         .split("\n\n")
         .collect::<Vec<&str>>()
         .iter()
-        .map(|line| line.replace("\n", " "))
-        .collect::<Vec<String>>();
-    let users = binding
-        .iter()
         .map(|user_array| {
             let mut user_map = std::collections::HashMap::new();
-            user_array.split(" ").for_each(|user| {
+            user_array.replace("\n", " ").split(" ").for_each(|user| {
                 let user = user.split(":").collect::<Vec<&str>>(); //split user by : and push to hash map
                 user_map.insert(user[0], user[1]);
             });
